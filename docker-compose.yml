@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: cloud-backend-local
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - APP_NAME=Cloud Essentials Local Development
+      - ENVIRONMENT=Lokaal Docker Compose
+      - APP_VERSION=1.0.0
+    restart: unless-stopped
+
